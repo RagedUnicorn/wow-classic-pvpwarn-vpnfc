@@ -31,19 +31,9 @@ This voice pack requires the main PVPWarn addon to be installed:
 Once installed, the voice pack will automatically register with PVPWarn. You can select it in PVPWarn's configuration:
 
 1. Open PVPWarn settings (`/rgpvpw opt`)
-2. Navigate to Voice Pack settings -- TODO
+2. Navigate to Voice Pack settings
 3. Select "Night Elf Female Classic" from the dropdown
 4. All alerts will now use the Night Elf Female voice
-
-## Voice Pack Family
-
-This is part of a series of voice packs for PVPWarn:
-- Night Elf Female (Classic) - This addon
-- Night Elf Female (Retail) - Coming soon
-- Night Elf Male (Classic) - Coming soon
-- Human Female - Coming soon
-- Human Male - Coming soon
-- And more...
 
 ## FAQ
 
