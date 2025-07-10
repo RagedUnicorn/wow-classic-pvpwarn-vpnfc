@@ -86,7 +86,7 @@ function me.Initialize()
 
   me.ShowWelcomeMessage()
 
-  local result = rgpvpw.addon.RegisterVoicePack(
+  local result = rgpvpw.voicePack.RegisterVoicePack(
     RGPVPW_VP_NFC_CONSTANTS.ADDON_NAME,
     RGPVPW_VP_NFC_CONSTANTS.DISPLAY_NAME,
     RGPVPW_VP_NFC_CONSTANTS.ASSET_PATH
