@@ -25,7 +25,7 @@ The voice pack registers itself with the main PVPWarn addon using:
 ```lua
 rgpvpw.addon.RegisterVoicePack(
     RGPVPW_VP_NFC_CONSTANTS.ADDON_NAME,
-    RGPVPW_VP_NFC_CONSTANTS.DESCRIPTION,
+    RGPVPW_VP_NFC_CONSTANTS.DISPLAY_NAME,
     RGPVPW_VP_NFC_CONSTANTS.ASSET_PATH
 )
 ```
@@ -118,7 +118,7 @@ mvn generate-resources -D generate.sources.overwrite=true -P release
 ```
 
 This will generate/update:
-- `PVPWarn_VoicePackNightelfFemaleClassic.toc` (from templates)
+- `PVPWarn_VoicePack_NFC.toc` (from templates)
 - `code/Environment.lua` (from environment.lua.tpl)
 
 **Important:** Always commit files in development state. The repository should maintain development configuration by default.

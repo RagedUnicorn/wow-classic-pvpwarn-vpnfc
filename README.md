@@ -18,7 +18,7 @@ This voice pack requires the main PVPWarn addon to be installed:
 1. First install the main PVPWarn addon
 2. Download this voice pack and install it in your WoW addons directory:
    `[WoW-installation-directory]\Interface\AddOns`
-3. Make sure the folder is named `PVPWarn_VoicePackNightelfFemaleClassic`
+3. Make sure the folder is named `PVPWarn_VoicePack_NFC`
 4. Enable both PVPWarn and this voice pack in your addon list
 
 ## Features
