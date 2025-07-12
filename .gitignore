@@ -21,3 +21,4 @@ target/
 
 # GitHub Pages build artifacts
 docs/assets/
+docs/index_local.html

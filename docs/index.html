@@ -4,174 +4,433 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="/wow-classic-pvpwarn-vpnfc/">
-    <title>PVPWarn Voice Pack - Nightelf Female Classic - Sound Examples</title>
+    <title>PVPWarn Voice Pack - Night Elf Female Classic - Sound Examples</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap');
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
+        :root {
+            --wow-gold: #f4c430;
+            --wow-gold-light: #ffd700;
+            --wow-gold-dark: #d4a017;
+            --wow-blue: #0596c7;
+            --wow-purple: #8b69c6;
+            --bg-dark: #0a0e1a;
+            --bg-darker: #060911;
+            --bg-card: #1a1f2e;
+            --text-light: #e8e6e3;
+            --text-dim: #9d9d9d;
+            --border-color: #2a3244;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #f5f5f5;
+            color: var(--text-light);
+            background-color: var(--bg-darker);
+            background-image: url('./nightelf_background.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            position: relative;
+        }
+        
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at top, rgba(26, 31, 46, 0.7) 0%, transparent 70%),
+                radial-gradient(ellipse at bottom, rgba(15, 20, 25, 0.8) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" opacity="0.03"><defs><pattern id="pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="white"/></pattern></defs><rect width="100%" height="100%" fill="url(%23pattern)"/></svg>');
+            pointer-events: none;
+            z-index: 1;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
+            position: relative;
+            z-index: 3;
         }
 
         header {
-            background-color: #2c3e50;
-            color: white;
-            padding: 30px 0;
+            background: linear-gradient(to bottom, rgba(26, 31, 46, 0.98) 0%, rgba(10, 14, 26, 0.98) 100%);
+            border-bottom: 2px solid var(--wow-gold-dark);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 60px;
+            backdrop-filter: blur(10px);
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, var(--wow-gold) 0%, transparent 70%);
+            opacity: 0.05;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.05; }
+            50% { transform: scale(1.1); opacity: 0.08; }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            padding: 60px 0;
             text-align: center;
-            margin-bottom: 40px;
         }
 
         header h1 {
-            font-size: 2.5em;
+            font-family: 'Cinzel', serif;
+            font-size: 3.5em;
+            font-weight: 600;
             margin-bottom: 10px;
+            background: linear-gradient(to bottom, var(--wow-gold-light) 0%, var(--wow-gold-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(244, 196, 48, 0.5);
+            letter-spacing: 2px;
         }
 
         header p {
-            font-size: 1.2em;
-            opacity: 0.9;
+            font-size: 1.3em;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 300;
         }
 
         .class-navigation {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            margin-bottom: 40px;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 15px;
+            margin-bottom: 50px;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(26, 31, 46, 0.95) 0%, rgba(42, 50, 68, 0.95) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(15px);
         }
 
         .class-btn {
-            padding: 10px 20px;
-            border: none;
-            background-color: #3498db;
-            color: white;
+            padding: 15px 20px;
+            border: 1px solid transparent;
+            background: linear-gradient(135deg, var(--bg-card) 0%, rgba(42, 50, 68, 0.8) 100%);
+            color: var(--text-dim);
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s, transform 0.1s;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .class-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent 0%, rgba(244, 196, 48, 0.3) 50%, transparent 100%);
+            transition: left 0.5s ease;
+        }
+
+        .class-btn:hover::before {
+            left: 100%;
         }
 
         .class-btn:hover {
-            background-color: #2980b9;
+            border-color: var(--wow-gold-dark);
+            color: var(--wow-gold);
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(244, 196, 48, 0.3);
         }
 
         .class-btn.active {
-            background-color: #e74c3c;
+            background: linear-gradient(135deg, var(--wow-gold-dark) 0%, var(--wow-gold) 100%);
+            color: var(--bg-darker);
+            border-color: var(--wow-gold-light);
+            box-shadow: 0 0 20px rgba(244, 196, 48, 0.5);
         }
 
         .class-section {
             display: none;
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background: linear-gradient(135deg, rgba(26, 31, 46, 0.97) 0%, rgba(42, 50, 68, 0.97) 100%);
+            padding: 40px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(15px);
         }
 
         .class-section.active {
             display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .class-section h2 {
-            color: #2c3e50;
-            margin-bottom: 25px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #ecf0f1;
+            font-family: 'Cinzel', serif;
+            color: var(--wow-gold);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--wow-gold-dark);
+            font-size: 2em;
+            letter-spacing: 1px;
         }
 
         .sound-category {
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
 
         .sound-category h3 {
-            color: #34495e;
-            margin-bottom: 15px;
-            font-size: 1.3em;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         .sound-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
         }
 
         .sound-item {
-            background-color: #f8f9fa;
-            padding: 15px;
-            border-radius: 5px;
-            border: 1px solid #e9ecef;
-            transition: box-shadow 0.3s;
+            background: rgba(26, 31, 46, 0.6);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sound-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, var(--wow-gold) 50%, transparent 100%);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .sound-item:hover::before {
+            transform: scaleX(1);
         }
 
         .sound-item:hover {
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background: rgba(42, 50, 68, 0.8);
+            border-color: var(--wow-gold-dark);
+            box-shadow: 0 5px 20px rgba(244, 196, 48, 0.2);
+            transform: translateY(-3px);
         }
 
         .sound-name {
             font-weight: 600;
-            margin-bottom: 8px;
-            color: #2c3e50;
+            margin-bottom: 12px;
+            color: var(--text-light);
+            font-size: 1.1em;
             text-transform: capitalize;
+            letter-spacing: 0.5px;
         }
 
         audio {
             width: 100%;
             height: 40px;
+            filter: sepia(100%) saturate(200%) hue-rotate(15deg) brightness(0.9);
+        }
+
+        audio::-webkit-media-controls-panel {
+            background-color: rgba(26, 31, 46, 0.8);
         }
 
         .back-to-repo {
             text-align: center;
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 1px solid #e9ecef;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-color);
         }
 
         .back-to-repo a {
-            color: #3498db;
+            color: var(--wow-gold);
             text-decoration: none;
             font-size: 1.1em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            position: relative;
+        }
+
+        .back-to-repo a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--wow-gold);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .back-to-repo a:hover::after {
+            transform: scaleX(1);
         }
 
         .back-to-repo a:hover {
-            text-decoration: underline;
+            color: var(--wow-gold-light);
+            text-shadow: 0 0 20px rgba(244, 196, 48, 0.5);
         }
+
+        /* Druid class color */
+        #druid.active h2 { color: #FF7D0A; border-color: #FF7D0A; }
+        .class-btn[data-class="druid"].active { background: linear-gradient(135deg, #CC5200 0%, #FF7D0A 100%); }
+
+        /* Hunter class color */
+        #hunter.active h2 { color: #ABD473; border-color: #ABD473; }
+        .class-btn[data-class="hunter"].active { background: linear-gradient(135deg, #7FB347 0%, #ABD473 100%); }
+
+        /* Mage class color */
+        #mage.active h2 { color: #69CCF0; border-color: #69CCF0; }
+        .class-btn[data-class="mage"].active { background: linear-gradient(135deg, #4A90E2 0%, #69CCF0 100%); }
+
+        /* Paladin class color */
+        #paladin.active h2 { color: #F58CBA; border-color: #F58CBA; }
+        .class-btn[data-class="paladin"].active { background: linear-gradient(135deg, #EE5A92 0%, #F58CBA 100%); }
+
+        /* Priest class color */
+        #priest.active h2 { color: #FFFFFF; border-color: #FFFFFF; }
+        .class-btn[data-class="priest"].active { background: linear-gradient(135deg, #D0D0D0 0%, #FFFFFF 100%); color: #1a1f2e; }
+
+        /* Rogue class color */
+        #rogue.active h2 { color: #FFF569; border-color: #FFF569; }
+        .class-btn[data-class="rogue"].active { background: linear-gradient(135deg, #CCC23F 0%, #FFF569 100%); color: #1a1f2e; }
+
+        /* Shaman class color */
+        #shaman.active h2 { color: #0070DE; border-color: #0070DE; }
+        .class-btn[data-class="shaman"].active { background: linear-gradient(135deg, #0056B3 0%, #0070DE 100%); }
+
+        /* Warlock class color */
+        #warlock.active h2 { color: #9482C9; border-color: #9482C9; }
+        .class-btn[data-class="warlock"].active { background: linear-gradient(135deg, #6B5B95 0%, #9482C9 100%); }
+
+        /* Warrior class color */
+        #warrior.active h2 { color: #C79C6E; border-color: #C79C6E; }
+        .class-btn[data-class="warrior"].active { background: linear-gradient(135deg, #9D7A53 0%, #C79C6E 100%); }
 
         @media (max-width: 768px) {
             header h1 {
-                font-size: 2em;
+                font-size: 2.5em;
             }
 
             .class-navigation {
-                padding: 15px;
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+                gap: 10px;
+                padding: 20px;
             }
 
             .class-btn {
-                font-size: 14px;
-                padding: 8px 16px;
+                font-size: 12px;
+                padding: 12px 10px;
             }
+
+            .sound-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Loading animation */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-darker);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 3px solid var(--border-color);
+            border-top: 3px solid var(--wow-gold);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
     </style>
 </head>
 <body>
+    <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+    </div>
+
     <header>
-        <div class="container">
-            <h1>PVPWarn Voice Pack</h1>
-            <p>Nightelf Female Classic - Sound Examples</p>
+        <div class="header-content">
+            <div class="container">
+                <h1>PVPWarn Voice Pack</h1>
+                <p>Night Elf Female Classic</p>
+            </div>
         </div>
     </header>
 
@@ -194,7 +453,7 @@
         <div id="druid" class="class-section active">
             <h2>Druid Abilities</h2>
             <div class="sound-category">
-                <h3>Abilities</h3>
+                <h3>Combat Abilities</h3>
                 <div class="sound-grid">
                     <div class="sound-item">
                         <div class="sound-name">Abolish Poison</div>
@@ -252,7 +511,7 @@
         <div id="hunter" class="class-section">
             <h2>Hunter Abilities</h2>
             <div class="sound-category">
-                <h3>Abilities</h3>
+                <h3>Combat Abilities</h3>
                 <div class="sound-grid">
                     <div class="sound-item">
                         <div class="sound-name">Aspect of the Cheetah</div>
@@ -303,7 +562,7 @@
         <div id="mage" class="class-section">
             <h2>Mage Abilities</h2>
             <div class="sound-category">
-                <h3>Abilities</h3>
+                <h3>Combat Abilities</h3>
                 <div class="sound-grid">
                     <div class="sound-item">
                         <div class="sound-name">Arcane Power</div>
@@ -354,7 +613,7 @@
         <div id="paladin" class="class-section">
             <h2>Paladin Abilities</h2>
             <div class="sound-category">
-                <h3>Abilities</h3>
+                <h3>Combat Abilities</h3>
                 <div class="sound-grid">
                     <div class="sound-item">
                         <div class="sound-name">Blessing of Freedom</div>
@@ -398,7 +657,7 @@
         <div id="priest" class="class-section">
             <h2>Priest Abilities</h2>
             <div class="sound-category">
-                <h3>Abilities</h3>
+                <h3>Combat Abilities</h3>
                 <div class="sound-grid">
                     <div class="sound-item">
                         <div class="sound-name">Desperate Prayer</div>
@@ -449,7 +708,7 @@
         <div id="rogue" class="class-section">
             <h2>Rogue Abilities</h2>
             <div class="sound-category">
-                <h3>Abilities</h3>
+                <h3>Combat Abilities</h3>
                 <div class="sound-grid">
                     <div class="sound-item">
                         <div class="sound-name">Adrenaline Rush</div>
@@ -507,7 +766,7 @@
         <div id="shaman" class="class-section">
             <h2>Shaman Abilities</h2>
             <div class="sound-category">
-                <h3>Abilities</h3>
+                <h3>Combat Abilities</h3>
                 <div class="sound-grid">
                     <div class="sound-item">
                         <div class="sound-name">Earth Shield</div>
@@ -551,7 +810,7 @@
         <div id="warlock" class="class-section">
             <h2>Warlock Abilities</h2>
             <div class="sound-category">
-                <h3>Abilities</h3>
+                <h3>Combat Abilities</h3>
                 <div class="sound-grid">
                     <div class="sound-item">
                         <div class="sound-name">Death Coil</div>
@@ -602,7 +861,7 @@
         <div id="warrior" class="class-section">
             <h2>Warrior Abilities</h2>
             <div class="sound-category">
-                <h3>Abilities</h3>
+                <h3>Combat Abilities</h3>
                 <div class="sound-grid">
                     <div class="sound-item">
                         <div class="sound-name">Berserker Rage</div>
@@ -728,7 +987,7 @@
                         </audio>
                     </div>
                     <div class="sound-item">
-                        <div class="sound-name">Shadowmeld (Nightelf)</div>
+                        <div class="sound-name">Shadowmeld (Night Elf)</div>
                         <audio controls preload="none">
                             <source src="./assets/sounds/racials/shadowmeld.mp3" type="audio/mpeg">
                             Your browser does not support the audio element.
@@ -804,12 +1063,17 @@
         </div>
 
         <div class="back-to-repo">
-            <a href="https://github.com/RagedUnicorn/wow-classic-pvpwarn-voicepack-nfc">← Back to Repository</a>
+            <a href="https://github.com/RagedUnicorn/wow-classic-pvpwarn-vpnfc">← Back to Repository</a>
         </div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Hide loading screen
+            setTimeout(() => {
+                document.getElementById('loading').classList.add('hidden');
+            }, 500);
+
             const buttons = document.querySelectorAll('.class-btn');
             const sections = document.querySelectorAll('.class-section');
 
