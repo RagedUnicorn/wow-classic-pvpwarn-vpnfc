@@ -18,3 +18,6 @@ Thumbs.db
 target/
 .idea/
 *.iml
+
+# GitHub Pages build artifacts
+docs/assets/
