@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PVPWarn Voice Pack - Nightelf Female Classic - Sound Examples</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .class-navigation {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .class-btn {
+            padding: 10px 20px;
+            border: none;
+            background-color: #3498db;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+
+        .class-btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .class-btn.active {
+            background-color: #e74c3c;
+        }
+
+        .class-section {
+            display: none;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .class-section.active {
+            display: block;
+        }
+
+        .class-section h2 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        .sound-category {
+            margin-bottom: 30px;
+        }
+
+        .sound-category h3 {
+            color: #34495e;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .sound-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+        }
+
+        .sound-item {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #e9ecef;
+            transition: box-shadow 0.3s;
+        }
+
+        .sound-item:hover {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .sound-name {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            text-transform: capitalize;
+        }
+
+        audio {
+            width: 100%;
+            height: 40px;
+        }
+
+        .back-to-repo {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .back-to-repo a {
+            color: #3498db;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+
+        .back-to-repo a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .class-navigation {
+                padding: 15px;
+            }
+
+            .class-btn {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>PVPWarn Voice Pack</h1>
+            <p>Nightelf Female Classic - Sound Examples</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="class-navigation">
+            <button class="class-btn active" data-class="druid">Druid</button>
+            <button class="class-btn" data-class="hunter">Hunter</button>
+            <button class="class-btn" data-class="mage">Mage</button>
+            <button class="class-btn" data-class="paladin">Paladin</button>
+            <button class="class-btn" data-class="priest">Priest</button>
+            <button class="class-btn" data-class="rogue">Rogue</button>
+            <button class="class-btn" data-class="shaman">Shaman</button>
+            <button class="class-btn" data-class="warlock">Warlock</button>
+            <button class="class-btn" data-class="warrior">Warrior</button>
+            <button class="class-btn" data-class="items">Items</button>
+            <button class="class-btn" data-class="racials">Racials</button>
+            <button class="class-btn" data-class="misc">Miscellaneous</button>
+        </div>
+
+        <div id="druid" class="class-section active">
+            <h2>Druid Abilities</h2>
+            <div class="sound-category">
+                <h3>Abilities</h3>
+                <div class="sound-grid">
+                    <div class="sound-item">
+                        <div class="sound-name">Abolish Poison</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/druid/abolish_poison.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Barkskin</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/druid/barkskin.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Bash</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/druid/bash.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Bear Form</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/druid/bear_form.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Cat Form</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/druid/cat_form.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Innervate</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/druid/innervate.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Nature's Swiftness</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/druid/natures_swiftness.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="hunter" class="class-section">
+            <h2>Hunter Abilities</h2>
+            <div class="sound-category">
+                <h3>Abilities</h3>
+                <div class="sound-grid">
+                    <div class="sound-item">
+                        <div class="sound-name">Aspect of the Cheetah</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/hunter/aspect_of_the_cheetah.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Bestial Wrath</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/hunter/bestial_wrath.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Concussive Shot</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/hunter/concussive_shot.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Deterrence</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/hunter/deterrence.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Freezing Trap</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/hunter/freezing_trap.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Scatter Shot</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/hunter/scatter_shot.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="mage" class="class-section">
+            <h2>Mage Abilities</h2>
+            <div class="sound-category">
+                <h3>Abilities</h3>
+                <div class="sound-grid">
+                    <div class="sound-item">
+                        <div class="sound-name">Arcane Power</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/mage/arcane_power.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Blink</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/mage/blink.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Counterspell</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/mage/counterspell.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Frost Nova</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/mage/frost_nova.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Ice Block</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/mage/ice_block.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Polymorph</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/mage/polymorph.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="paladin" class="class-section">
+            <h2>Paladin Abilities</h2>
+            <div class="sound-category">
+                <h3>Abilities</h3>
+                <div class="sound-grid">
+                    <div class="sound-item">
+                        <div class="sound-name">Blessing of Freedom</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/paladin/blessing_of_freedom.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Blessing of Protection</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/paladin/blessing_of_protection.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Divine Shield</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/paladin/divine_shield.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Hammer of Justice</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/paladin/hammer_of_justice.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Lay on Hands</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/paladin/lay_on_hands.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="priest" class="class-section">
+            <h2>Priest Abilities</h2>
+            <div class="sound-category">
+                <h3>Abilities</h3>
+                <div class="sound-grid">
+                    <div class="sound-item">
+                        <div class="sound-name">Desperate Prayer</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/priest/desperate_prayer.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Dispersion</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/priest/dispersion.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Fear Ward</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/priest/fear_ward.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Power Infusion</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/priest/power_infusion.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Psychic Scream</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/priest/psychic_scream.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Shadowform</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/priest/shadowform.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="rogue" class="class-section">
+            <h2>Rogue Abilities</h2>
+            <div class="sound-category">
+                <h3>Abilities</h3>
+                <div class="sound-grid">
+                    <div class="sound-item">
+                        <div class="sound-name">Adrenaline Rush</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/rogue/adrenaline_rush.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Blind</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/rogue/blind.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Cheap Shot</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/rogue/cheap_shot.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Evasion</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/rogue/evasion.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Kick</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/rogue/kick.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Sprint</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/rogue/sprint.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Vanish</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/rogue/vanish.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="shaman" class="class-section">
+            <h2>Shaman Abilities</h2>
+            <div class="sound-category">
+                <h3>Abilities</h3>
+                <div class="sound-grid">
+                    <div class="sound-item">
+                        <div class="sound-name">Earth Shield</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/shaman/earth_shield.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Elemental Mastery</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/shaman/elemental_mastery.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Grounding Totem</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/shaman/grounding_totem.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Nature's Swiftness</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/shaman/natures_swiftness.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Tremor Totem</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/shaman/tremor_totem.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="warlock" class="class-section">
+            <h2>Warlock Abilities</h2>
+            <div class="sound-category">
+                <h3>Abilities</h3>
+                <div class="sound-grid">
+                    <div class="sound-item">
+                        <div class="sound-name">Death Coil</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/warlock/death_coil.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Fear</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/warlock/fear.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Howl of Terror</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/warlock/howl_of_terror.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Metamorphosis</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/warlock/metamorphosis.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Shadow Ward</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/warlock/shadow_ward.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Spell Lock</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/warlock/spell_lock.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="warrior" class="class-section">
+            <h2>Warrior Abilities</h2>
+            <div class="sound-category">
+                <h3>Abilities</h3>
+                <div class="sound-grid">
+                    <div class="sound-item">
+                        <div class="sound-name">Berserker Rage</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/warrior/berserker_rage.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Charge</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/warrior/charge.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Disarm</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/warrior/disarm.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Intercept</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/warrior/intercept.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Intimidating Shout</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/warrior/intimidating_shout.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Pummel</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/warrior/pummel.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Shield Wall</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/warrior/shield_wall.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="items" class="class-section">
+            <h2>Item Effects</h2>
+            <div class="sound-category">
+                <h3>Trinkets & Items</h3>
+                <div class="sound-grid">
+                    <div class="sound-item">
+                        <div class="sound-name">Insignia (PvP Trinket)</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/items/insignia.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Tidal Charm</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/items/tidal_charm.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Gnomish Rocket Boots</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/items/gnomish_rocket_boots.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Spider Belt</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/items/spider_belt.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="racials" class="class-section">
+            <h2>Racial Abilities</h2>
+            <div class="sound-category">
+                <h3>All Races</h3>
+                <div class="sound-grid">
+                    <div class="sound-item">
+                        <div class="sound-name">Berserking (Troll)</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/racials/berserking.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Blood Fury (Orc)</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/racials/blood_fury.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Escape Artist (Gnome)</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/racials/escape_artist.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Perception (Human)</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/racials/perception.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Shadowmeld (Nightelf)</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/racials/shadowmeld.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Stoneform (Dwarf)</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/racials/stoneform.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">War Stomp (Tauren)</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/racials/war_stomp.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Will of the Forsaken (Undead)</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/racials/will_of_the_forsaken.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="misc" class="class-section">
+            <h2>Miscellaneous</h2>
+            <div class="sound-category">
+                <h3>Consumables & Other</h3>
+                <div class="sound-grid">
+                    <div class="sound-item">
+                        <div class="sound-name">Free Action Potion</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/misc/free_action_potion.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">First Aid</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/misc/first_aid.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Invisibility Potion</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/misc/invisibility_potion.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Limited Invulnerability Potion</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/misc/limited_invulnerability_potion.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="sound-item">
+                        <div class="sound-name">Thistle Tea</div>
+                        <audio controls preload="none">
+                            <source src="../assets/sounds/misc/thistle_tea.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="back-to-repo">
+            <a href="https://github.com/RagedUnicorn/wow-classic-pvpwarn-voicepack-nfc">← Back to Repository</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.class-btn');
+            const sections = document.querySelectorAll('.class-section');
+
+            buttons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const targetClass = this.getAttribute('data-class');
+
+                    // Update button states
+                    buttons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Update section visibility
+                    sections.forEach(s => s.classList.remove('active'));
+                    document.getElementById(targetClass).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
