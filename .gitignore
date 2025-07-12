@@ -22,3 +22,7 @@ target/
 # GitHub Pages build artifacts
 docs/assets/
 docs/index_local.html
+
+# Generated files from voice cloning
+voice_clone/files.txt
+voice_clone/merged.ogg
