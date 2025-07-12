@@ -1,9 +1,11 @@
-# PVPWarn Voice Pack - Night Elf Female Classic
+# PVPWarn Voice Pack - Nightelf Female Classic
 
-> Voice pack addon for PVPWarn featuring Night Elf Female voice alerts for WoW Classic
+![](./docs/nightelf_race.png)
 
-![](docs/wow_badge.svg)
-![](docs/license_mit.svg)
+> Voice pack addon for PVPWarn featuring Nightelf Female voice alerts for WoW Classic
+
+![](./docs/wow_badge.svg)
+![](./docs/license_mit.svg)
 
 This voice pack provides Night Elf Female voice alerts for the [PVPWarn](https://github.com/RagedUnicorn/wow-classic-pvpwarn) addon. All combat alerts will use the Night Elf Female voice instead of the default sounds.
 
@@ -23,7 +25,7 @@ This voice pack requires the main PVPWarn addon to be installed:
 
 ## Features
 
-- Complete Night Elf Female voice coverage for all PVPWarn alerts
+- Complete Nightelf Female voice coverage for all PVPWarn alerts
 - Seamless integration with PVPWarn's configuration
 
 ## Usage
@@ -32,8 +34,8 @@ Once installed, the voice pack will automatically register with PVPWarn. You can
 
 1. Open PVPWarn settings (`/rgpvpw opt`)
 2. Navigate to Voice Pack settings
-3. Select "Night Elf Female Classic" from the dropdown
-4. All alerts will now use the Night Elf Female voice
+3. Select "Nightelf Female Classic" from the dropdown
+4. All alerts will now use the Nightelf Female voice
 
 ## FAQ
 

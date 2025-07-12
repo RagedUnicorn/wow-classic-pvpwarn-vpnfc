@@ -6,7 +6,7 @@
 - `rg`: RagedUnicorn (developer prefix)
 - `pvpw`: PVPWarn (main addon)
 - `vp`: Voice Pack
-- `nfc`: Night Elf Female Classic
+- `nfc`: Nightelf Female Classic
 
 ### Code Structure
 

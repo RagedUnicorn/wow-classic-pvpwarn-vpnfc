@@ -25,17 +25,17 @@
 -- luacheck: globals GetAddOnMetadata
 
 --[[
-  PVPWarn Voice Pack - Night Elf Female (Classic)
+  PVPWarn Voice Pack - Nightelf Female (Classic)
 
   Namespace: rgpvpwvpnfc
   - rg: RagedUnicorn (developer prefix to avoid addon conflicts)
   - pvpw: PVPWarn (main addon)
   - vp: Voice Pack
-  - nfc: Night Elf Female Classic
+  - nfc: Nightelf Female Classic
 
   Pattern for other voice packs:
-  - rgpvpwvpnfr: Night Elf Female Retail
-  - rgpvpwvpnmc: Night Elf Male Classic
+  - rgpvpwvpnfr: Nightelf Female Retail
+  - rgpvpwvpnmc: Nightelf Male Classic
   - rgpvpwvphmf: Human Female
   - rgpvpwvpdwm: Dwarf Male
   etc.
