@@ -30,4 +30,4 @@ rgpvpwvpnfc.L = {}
 rgpvpwvpnfc.L["addon_name"] = "PVPWarn Voice Pack Nightelf Female Classic"
 
 -- console
-rgpvpwvpnfc.L["info_title"] = "|cFF00FFB0PVPWarn Voice Pack Nightelf Female Classic|r" -- TODO
+rgpvpwvpnfc.L["info_title"] = "|cFF00FFB0PVPWarn Voice Pack Nightelf Female Classic|r"
