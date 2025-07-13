@@ -1,6 +1,6 @@
 # PVPWarn Voice Pack - Nightelf Female Classic
 
-![](./docs/nightelf_race.png)
+![](./docs/nightelf_race.webp)
 
 > Voice pack addon for PVPWarn featuring Nightelf Female voice alerts for WoW Classic
 
