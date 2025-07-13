@@ -1,4 +1,4 @@
 # Initial Release
 
 * Version 1.0.0
-* Complete Nightelf Voice Pack for PVPWarn
+* Complete Nightelf Female Classic Voice Pack for PVPWarn
