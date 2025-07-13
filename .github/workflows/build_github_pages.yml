@@ -16,23 +16,23 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Copy assets to docs folder
+      - name: Copy assets to github_page folder
         run: |
-          echo "Copying assets folder to docs..."
-          cp -r assets docs/
+          echo "Copying assets folder to github_page..."
+          cp -r assets github_page/
           echo "Assets copied successfully"
-      - name: List docs contents
+      - name: List github_page contents
         run: |
-          echo "Contents of docs folder:"
-          ls -la docs/
-          echo "Contents of docs/assets:"
-          ls -la docs/assets/ || echo "No assets folder"
+          echo "Contents of github_page folder:"
+          ls -la github_page/
+          echo "Contents of github_page/assets:"
+          ls -la github_page/assets/ || echo "No assets folder"
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./docs
+          path: ./github_page
   deploy:
     environment:
       name: github-pages
