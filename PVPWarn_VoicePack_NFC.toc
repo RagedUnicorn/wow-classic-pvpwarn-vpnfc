@@ -1,3 +1,4 @@
+# THIS FILE IS AUTO-GENERATED. ALL CHANGES ARE OVERWRITTEN
 ## Interface: 11507
 ## Title: PVPWarn Voice Pack Nightelf Female Classic
 ## Author: Michael Wiesendanger <michael.wiesendanger@gmail.com>
