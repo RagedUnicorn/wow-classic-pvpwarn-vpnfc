@@ -43,6 +43,8 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url }}
   
   test:
     runs-on: ubuntu-latest
@@ -63,7 +65,9 @@ jobs:
         run: npx playwright install --with-deps chromium
       
       - name: Run Playwright tests
-        run: npm test
+        run: |
+          echo "Testing GitHub Pages at: ${{ needs.deploy.outputs.page_url }}"
+          npm test
         env:
           GITHUB_PAGES_URL: ${{ needs.deploy.outputs.page_url }}
       
