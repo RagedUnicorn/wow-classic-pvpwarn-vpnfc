@@ -32,10 +32,48 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium
 
-      - name: Wait for GitHub Pages propagation
+      - name: Wait for GitHub Pages to be accessible
         run: |
-          echo "Waiting 30 seconds for GitHub Pages to fully propagate..."
-          sleep 30
+          URL="${{ steps.set-url.outputs.url }}"
+          echo "Waiting for GitHub Pages to be accessible at: $URL"
+          
+          # Maximum wait time: 10 minutes (40 attempts * 15 seconds)
+          MAX_ATTEMPTS=40
+          DELAY=15
+          
+          for i in $(seq 1 $MAX_ATTEMPTS); do
+            echo "Attempt $i/$MAX_ATTEMPTS..."
+            
+            # Check if the page returns a successful status code and correct content
+            HTTP_CODE=$(curl -s -o /tmp/page_content.html -w "%{http_code}" "$URL")
+            
+            if [ "$HTTP_CODE" = "200" ]; then
+              # Check if it's not the GitHub 404 page
+              if ! grep -q "There isn't a GitHub Pages site here" /tmp/page_content.html; then
+                # Check if it contains expected content
+                if grep -q "PVPWarn Voice Pack" /tmp/page_content.html; then
+                  echo "✅ GitHub Pages is accessible and showing correct content!"
+                  exit 0
+                else
+                  echo "⚠️ Page returns 200 but doesn't contain expected content"
+                fi
+              else
+                echo "⚠️ Page returns 200 but shows GitHub 404 page"
+              fi
+            else
+              echo "⚠️ HTTP status code: $HTTP_CODE"
+            fi
+            
+            if [ $i -lt $MAX_ATTEMPTS ]; then
+              echo "Waiting ${DELAY}s before next attempt..."
+              sleep $DELAY
+            fi
+          done
+          
+          echo "❌ ERROR: GitHub Pages did not become accessible after $((MAX_ATTEMPTS * DELAY)) seconds"
+          echo "Final page content:"
+          cat /tmp/page_content.html
+          exit 1
 
       - name: Set GitHub Pages URL
         id: set-url
