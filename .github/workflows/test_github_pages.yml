@@ -37,17 +37,22 @@ jobs:
           echo "Waiting 30 seconds for GitHub Pages to fully propagate..."
           sleep 30
 
-      - name: Run Playwright tests
+      - name: Set GitHub Pages URL
+        id: set-url
         run: |
           if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
-            URL="${{ github.event.inputs.deployment_url }}"
+            echo "url=${{ github.event.inputs.deployment_url }}" >> $GITHUB_OUTPUT
           else
-            URL="${{ github.event.deployment.payload.web_url }}"
+            # For deployment_status events, construct the URL from repository info
+            echo "url=https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/" >> $GITHUB_OUTPUT
           fi
-          echo "Testing GitHub Pages at: $URL"
+      
+      - name: Run Playwright tests
+        run: |
+          echo "Testing GitHub Pages at: ${{ steps.set-url.outputs.url }}"
           npm test
         env:
-          GITHUB_PAGES_URL: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.deployment_url || github.event.deployment.payload.web_url }}
+          GITHUB_PAGES_URL: ${{ steps.set-url.outputs.url }}
 
       - name: Upload test results
         if: always()
