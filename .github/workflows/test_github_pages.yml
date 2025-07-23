@@ -54,20 +54,28 @@ jobs:
           if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
             echo "url=${{ github.event.inputs.deployment_url }}" >> $GITHUB_OUTPUT
           else
-            # For deployment_status events, use the deployment URL if available
-            if [ -n "${{ github.event.deployment.payload.web_url }}" ]; then
-              echo "url=${{ github.event.deployment.payload.web_url }}" >> $GITHUB_OUTPUT
-            else
-              # Fallback: construct from repository name
-              REPO_NAME=$(echo "${{ github.repository }}" | cut -d'/' -f2)
-              OWNER=$(echo "${{ github.repository }}" | cut -d'/' -f1 | tr '[:upper:]' '[:lower:]')
-              echo "url=https://${OWNER}.github.io/${REPO_NAME}/" >> $GITHUB_OUTPUT
-            fi
+            # For deployment_status events, always construct from repository name
+            # since payload.web_url is not available in deployment_status events
+            echo "Raw repository: ${{ github.repository }}"
+            REPO_NAME=$(echo "${{ github.repository }}" | cut -d'/' -f2)
+            echo "Extracted repo name: $REPO_NAME"
+            OWNER=$(echo "${{ github.repository }}" | cut -d'/' -f1 | tr '[:upper:]' '[:lower:]')
+            echo "Extracted owner (lowercase): $OWNER"
+            URL="https://${OWNER}.github.io/${REPO_NAME}/"
+            echo "Constructed URL: $URL"
+            echo "url=${URL}" >> $GITHUB_OUTPUT
           fi
       
+      - name: Verify URL Setup
+        run: |
+          echo "URL from step output: ${{ steps.set-url.outputs.url }}"
+          echo "Environment variable check:"
+          echo "GITHUB_PAGES_URL=${{ steps.set-url.outputs.url }}"
+          
       - name: Run Playwright tests
         run: |
           echo "Testing GitHub Pages at: ${{ steps.set-url.outputs.url }}"
+          echo "Environment GITHUB_PAGES_URL: $GITHUB_PAGES_URL"
           npm test
         env:
           GITHUB_PAGES_URL: ${{ steps.set-url.outputs.url }}
