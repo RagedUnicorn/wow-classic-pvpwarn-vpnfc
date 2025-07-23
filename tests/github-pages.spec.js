@@ -1,13 +1,8 @@
 const { test, expect } = require('@playwright/test');
 
-// Ensure baseURL is properly set for all tests in this file
-test.use({
-  baseURL: process.env.GITHUB_PAGES_URL || 'http://localhost:8080',
-});
-
 test.describe('GitHub Pages Deployment', () => {
   test('should load the main page', async ({ page }) => {
-    await page.goto('/');
+    await page.goto('');
 
     // Check that the page loads without errors
     await expect(page).toHaveTitle(/PVPWarn Voice Pack/);
@@ -19,7 +14,7 @@ test.describe('GitHub Pages Deployment', () => {
   });
 
   test('should have functional class navigation buttons', async ({ page }) => {
-    await page.goto('/');
+    await page.goto('');
 
     // Check that class buttons exist
     const buttons = page.locator('.class-btn');
@@ -32,7 +27,7 @@ test.describe('GitHub Pages Deployment', () => {
   });
 
   test('should load audio players', async ({ page }) => {
-    await page.goto('/');
+    await page.goto('');
 
     // Navigate to warrior section
     await page.click('.class-btn[data-class="warrior"]');
@@ -53,7 +48,7 @@ test.describe('GitHub Pages Deployment', () => {
   });
 
   test('should have working audio file links', async ({ page, request }) => {
-    await page.goto('/');
+    await page.goto('');
 
     // Wait for page to load
     await page.waitForSelector('.class-btn');
@@ -83,7 +78,7 @@ test.describe('GitHub Pages Deployment', () => {
   });
 
   test('should navigate between different class sections', async ({ page }) => {
-    await page.goto('/');
+    await page.goto('');
 
     // Start with Druid (default active)
     await expect(page.locator('#druid')).toHaveClass(/active/);
