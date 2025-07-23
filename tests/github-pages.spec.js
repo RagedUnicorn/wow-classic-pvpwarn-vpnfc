@@ -1,8 +1,23 @@
 const { test, expect } = require('@playwright/test');
 
 test.describe('GitHub Pages Deployment', () => {
-  test('should load the main page', async ({ page }) => {
-    await page.goto('/');
+  test.beforeEach(async ({ page, baseURL }) => {
+    console.log('BeforeEach - baseURL from context:', baseURL);
+    console.log('BeforeEach - GITHUB_PAGES_URL env:', process.env.GITHUB_PAGES_URL);
+  });
+
+  test('should load the main page', async ({ page, baseURL }) => {
+    console.log('Test baseURL:', baseURL);
+    console.log('GITHUB_PAGES_URL env in test:', process.env.GITHUB_PAGES_URL);
+    
+    // Try using the full URL directly
+    const fullUrl = process.env.GITHUB_PAGES_URL || baseURL || 'http://localhost:8080';
+    console.log('Using URL:', fullUrl);
+    
+    await page.goto(fullUrl);
+    
+    console.log('Current page URL after navigation:', page.url());
+    console.log('Page title:', await page.title());
 
     // Check that the page loads without errors
     await expect(page).toHaveTitle(/PVPWarn Voice Pack/);
@@ -14,7 +29,8 @@ test.describe('GitHub Pages Deployment', () => {
   });
 
   test('should have functional class navigation buttons', async ({ page }) => {
-    await page.goto('/');
+    const fullUrl = process.env.GITHUB_PAGES_URL || 'http://localhost:8080';
+    await page.goto(fullUrl);
 
     // Check that class buttons exist
     const buttons = page.locator('.class-btn');
@@ -27,7 +43,8 @@ test.describe('GitHub Pages Deployment', () => {
   });
 
   test('should load audio players', async ({ page }) => {
-    await page.goto('/');
+    const fullUrl = process.env.GITHUB_PAGES_URL || 'http://localhost:8080';
+    await page.goto(fullUrl);
 
     // Navigate to warrior section
     await page.click('.class-btn[data-class="warrior"]');
@@ -48,7 +65,8 @@ test.describe('GitHub Pages Deployment', () => {
   });
 
   test('should have working audio file links', async ({ page, request }) => {
-    await page.goto('/');
+    const fullUrl = process.env.GITHUB_PAGES_URL || 'http://localhost:8080';
+    await page.goto(fullUrl);
 
     // Wait for page to load
     await page.waitForSelector('.class-btn');
@@ -78,7 +96,8 @@ test.describe('GitHub Pages Deployment', () => {
   });
 
   test('should navigate between different class sections', async ({ page }) => {
-    await page.goto('/');
+    const fullUrl = process.env.GITHUB_PAGES_URL || 'http://localhost:8080';
+    await page.goto(fullUrl);
 
     // Start with Druid (default active)
     await expect(page.locator('#druid')).toHaveClass(/active/);
