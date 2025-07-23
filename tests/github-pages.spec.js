@@ -62,7 +62,7 @@ test.describe('GitHub Pages Deployment', () => {
     expect(audioSources.length).toBeGreaterThan(0);
 
     // Skip HTTP checks in local environment to avoid IPv6 issues
-    if (process.env.CI || process.env.GITHUB_PAGES_URL) {
+    if (process.env.CI && process.env.GITHUB_PAGES_URL) {
       // Check that first few audio files are accessible
       for (let i = 0; i < Math.min(3, audioSources.length); i++) {
         const response = await request.head(audioSources[i]);

@@ -1,5 +1,11 @@
 const { defineConfig, devices } = require('@playwright/test');
 
+// Debug output
+if (process.env.CI) {
+  console.log('Running in CI environment');
+  console.log('GITHUB_PAGES_URL:', process.env.GITHUB_PAGES_URL);
+}
+
 module.exports = defineConfig({
   testDir: './tests',
   timeout: 30 * 1000,
