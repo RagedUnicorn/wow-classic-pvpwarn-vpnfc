@@ -37,16 +37,32 @@ jobs:
           echo "Waiting 30 seconds for GitHub Pages to fully propagate..."
           sleep 30
 
+      - name: Debug GitHub Context
+        if: github.event_name == 'deployment_status'
+        run: |
+          echo "Event name: ${{ github.event_name }}"
+          echo "Repository: ${{ github.repository }}"
+          echo "Repository owner: ${{ github.repository_owner }}"
+          echo "Deployment URL: ${{ github.event.deployment.payload.web_url || 'not found' }}"
+          echo "Deployment environment: ${{ github.event.deployment.environment }}"
+          echo "Full deployment payload:"
+          echo '${{ toJSON(github.event.deployment) }}'
+          
       - name: Set GitHub Pages URL
         id: set-url
         run: |
           if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
             echo "url=${{ github.event.inputs.deployment_url }}" >> $GITHUB_OUTPUT
           else
-            # For deployment_status events, extract repository name from github.repository
-            REPO_NAME=$(echo "${{ github.repository }}" | cut -d'/' -f2)
-            OWNER=$(echo "${{ github.repository }}" | cut -d'/' -f1 | tr '[:upper:]' '[:lower:]')
-            echo "url=https://${OWNER}.github.io/${REPO_NAME}/" >> $GITHUB_OUTPUT
+            # For deployment_status events, use the deployment URL if available
+            if [ -n "${{ github.event.deployment.payload.web_url }}" ]; then
+              echo "url=${{ github.event.deployment.payload.web_url }}" >> $GITHUB_OUTPUT
+            else
+              # Fallback: construct from repository name
+              REPO_NAME=$(echo "${{ github.repository }}" | cut -d'/' -f2)
+              OWNER=$(echo "${{ github.repository }}" | cut -d'/' -f1 | tr '[:upper:]' '[:lower:]')
+              echo "url=https://${OWNER}.github.io/${REPO_NAME}/" >> $GITHUB_OUTPUT
+            fi
           fi
       
       - name: Run Playwright tests
