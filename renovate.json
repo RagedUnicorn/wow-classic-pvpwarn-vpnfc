@@ -53,17 +53,8 @@
         "custom.wow-versions",
         "custom.wow-patch-versions"
       ],
-      "groupName": "WoW Classic Era Badge Updates",
-      "description": "Update WoW Classic Era interface and patch versions for SVG badge",
-      "postUpgradeTasks": {
-        "commands": [
-          "mvn clean generate-resources -f pom.xml"
-        ],
-        "fileFilters": [
-          "docs/wow_badge.svg"
-        ],
-        "executionMode": "branch"
-      }
+      "groupName": "WoW Classic Era Version Update",
+      "description": "Update WoW Classic Era interface and patch versions"
     },
     {
       "matchDatasources": [
