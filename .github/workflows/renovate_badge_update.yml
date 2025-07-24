@@ -30,8 +30,10 @@ jobs:
       - name: Check if WoW versions changed
         id: check-changes
         run: |
+          # Fetch the base branch to compare against
+          git fetch origin ${{ github.base_ref }}
           # Check if addon.interface or addon.supported.patch changed
-          if git diff HEAD~1 HEAD -- pom.xml | grep -E "(addon\.interface|addon\.supported\.patch)"; then
+          if git diff origin/${{ github.base_ref }}...HEAD -- pom.xml | grep -E "(addon\.interface|addon\.supported\.patch)"; then
             echo "versions_changed=true" >> $GITHUB_OUTPUT
           else
             echo "versions_changed=false" >> $GITHUB_OUTPUT
