@@ -42,7 +42,7 @@ jobs:
         if: steps.check-changes.outputs.versions_changed == 'true'
         run: |
           echo "WoW version properties changed, regenerating SVG badge..."
-          mvn clean generate-resources -f pom.xml
+          mvn clean generate-resources -Pgenerate-sources -Dgenerate.sources.overwrite=true -f pom.xml
       - name: Check for SVG changes
         id: check-svg
         run: |
