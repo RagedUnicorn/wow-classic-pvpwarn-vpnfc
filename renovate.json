@@ -62,6 +62,16 @@
       ],
       "groupName": "WoW Classic Era Game Version",
       "description": "Update WoW Classic Era game version for CurseForge"
+    },
+    {
+      "matchManagers": [
+        "docker-compose"
+      ],
+      "matchPackageNames": [
+        "ragedunicorn/ffmpeg"
+      ],
+      "groupName": "Docker images",
+      "description": "Update Docker images"
     }
   ],
   "maven": {
@@ -72,6 +82,12 @@
   "github-actions": {
     "managerFilePatterns": [
       "/^\\.github/workflows/.*\\.ya?ml$/"
+    ]
+  },
+  "docker-compose": {
+    "managerFilePatterns": [
+      "docker-compose.yml",
+      "voice_clone/docker-compose.yml"
     ]
   },
   "customDatasources": {
