@@ -7,6 +7,7 @@
 ![](./docs/wow_badge.svg)
 ![](./docs/license_mit.svg)
 [![Lint Project](https://github.com/RagedUnicorn/wow-classic-pvpwarn-vpnfc/actions/workflows/lint.yaml/badge.svg)](https://github.com/RagedUnicorn/wow-classic-pvpwarn-vpnfc/actions/workflows/lint.yaml)
+[![Test GitHub Pages](https://github.com/RagedUnicorn/wow-classic-pvpwarn-vpnfc/actions/workflows/test_github_pages.yml/badge.svg)](https://github.com/RagedUnicorn/wow-classic-pvpwarn-vpnfc/actions/workflows/test_github_pages.yml)
 
 This voice pack provides Nightelf Female voice alerts for the [PVPWarn](https://github.com/RagedUnicorn/wow-classic-pvpwarn) addon. All combat alerts will use the Nightelf Female voice instead of the default sounds.
 
