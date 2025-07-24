@@ -42,8 +42,8 @@
 ]]--
 
 rgpvpwvpnfc = rgpvpwvpnfc or {}
-local voicePackNightElfFemale = rgpvpwvpnfc
-local me = voicePackNightElfFemale
+local voicePackNightelfFemale = rgpvpwvpnfc
+local me = voicePackNightelfFemale
 
 me.tag = "Core"
 
@@ -108,8 +108,8 @@ end
 ]]--
 ShowWelcomeMessage = function()
   print(
-    string.format("|cFF00FFB0" .. "Loaded - " .. voicePackNightElfFemale.L["addon_name"]
-      .. voicePackNightElfFemale.L["info_title"],
+    string.format("|cFF00FFB0" .. "Loaded - " .. voicePackNightelfFemale.L["addon_name"]
+      .. voicePackNightelfFemale.L["info_title"],
       GetAddOnMetadata(RGPVPW_VP_NFC_CONSTANTS.ADDON_NAME, "Version"))
   )
 end
