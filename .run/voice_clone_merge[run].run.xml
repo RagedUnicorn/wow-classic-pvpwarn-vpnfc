@@ -4,6 +4,8 @@
       <settings>
         <option name="envFilePath" value="" />
         <option name="sourceFilePath" value="voice_clone/docker-compose.yml" />
+        <option name="upAbortOnContainerExit" value="true" />
+        <option name="upDetach" value="false" />
       </settings>
     </deployment>
     <method v="2" />
