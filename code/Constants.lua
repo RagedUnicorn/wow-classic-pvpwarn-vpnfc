@@ -25,6 +25,6 @@
 
 RGPVPW_VP_NFC_CONSTANTS = {
   ADDON_NAME = "PVPWarn_VoicePack_NFC",
-  DISPLAY_NAME = "Night Female Classic",
+  DISPLAY_NAME = "Nightelf Female Classic",
   ASSET_PATH = "Interface\\AddOns\\PVPWarn_VoicePack_NFC\\assets\\sounds\\"
 }
