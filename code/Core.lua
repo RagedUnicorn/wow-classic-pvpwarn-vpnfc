@@ -22,7 +22,7 @@
   SOFTWARE.
 ]]--
 
--- luacheck: globals GetAddOnMetadata
+-- luacheck: globals C_AddOns
 
 --[[
   PVPWarn Voice Pack - Nightelf Female (Classic)
@@ -110,6 +110,6 @@ ShowWelcomeMessage = function()
   print(
     string.format("|cFF00FFB0" .. "Loaded - " .. voicePackNightelfFemale.L["addon_name"]
       .. voicePackNightelfFemale.L["info_title"],
-      GetAddOnMetadata(RGPVPW_VP_NFC_CONSTANTS.ADDON_NAME, "Version"))
+      C_AddOns.GetAddOnMetadata(RGPVPW_VP_NFC_CONSTANTS.ADDON_NAME, "Version"))
   )
 end
