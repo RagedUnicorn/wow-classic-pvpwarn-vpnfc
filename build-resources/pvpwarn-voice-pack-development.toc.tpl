@@ -5,6 +5,7 @@ ${addon.comment.generated.toc}
 ## Notes: ${addon.description}
 ## Dependencies: PVPWarn
 ## Version: ${addon.tag.version}
+## IconTexture: Interface\AddOns\PVPWarn_VoicePack_NFC\assets\pvpwarn_voice_nightelf_female
 
 # constant values
 code/Constants.lua
