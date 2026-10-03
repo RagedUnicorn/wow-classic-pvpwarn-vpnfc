@@ -17,7 +17,7 @@ This voice pack provides Nightelf Female voice alerts for the [PVPWarn](https://
 ## Requirements
 
 This voice pack requires the main PVPWarn addon to be installed:
-- [PVPWarn on CurseForge](https://www.curseforge.com/wow/addons/pvpwarn)
+- [PVPWarn on CurseForge](https://www.curseforge.com/wow/addons/pvpwarn-rg)
 - [PVPWarn on GitHub](https://github.com/RagedUnicorn/wow-classic-pvpwarn)
 
 ## Installation
